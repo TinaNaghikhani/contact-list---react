@@ -1,16 +1,11 @@
-import { useState } from "react";
+import React from "react";
+import HomeComponent from "./components/home/HomeComponent";
+import { DarkModeProvider } from "./components/context/DarkModeContext";
 
-import "./App.css";
-import HomePage from "./pages/home/homePage";
-
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <DarkModeProvider>
+      <HomeComponent />
+    </DarkModeProvider>
   );
 }
-
-export default App;
