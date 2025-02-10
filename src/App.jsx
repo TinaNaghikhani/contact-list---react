@@ -1,11 +1,11 @@
 import React from "react";
-import HomeComponent from "./components/home/HomeComponent";
 import { DarkModeProvider } from "./components/context/DarkModeContext";
+import HomePage from "./pages/home/homePage";
 
 export default function App() {
   return (
     <DarkModeProvider>
-      <HomeComponent />
+      <HomePage />
     </DarkModeProvider>
   );
 }
