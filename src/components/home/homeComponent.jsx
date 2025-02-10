@@ -3,6 +3,7 @@ import Cart from "../cart/cart";
 import Header from "../header/hader";
 import Form from "../form/form";
 import { DarkModeContext } from "../context/DarkModeContext";
+import Fetch from "../cart/fetch/fetch";
 
 export default function HomeComponent() {
     const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -24,6 +25,7 @@ export default function HomeComponent() {
           <h1 className="mb-4 text-center text-2xl font-bold">لیست کاربران</h1>
           <div className={`${darkMode ? "bg-gary-600 w-full h-96 p-2 rounded shadow-lg border" : "w-full h-96 p-2 rounded bg-gray-100 shadow-lg border"}`}>
             <Cart />
+            <Fetch/>
           </div>
         </div>
       </div>

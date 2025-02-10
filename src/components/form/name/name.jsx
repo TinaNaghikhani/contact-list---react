@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 const regexName = /^[a-zA-Zآ-ی]{2,25}( [a-zA-Zآ-ی]{2,25})?$/;
 
-export default function Name({ value, error }) {
-  const [name, setName] = useState("");
+export default function Name({ value, error,onChange }) {
   const [isValid, setIsValid] = useState(false);
   const [showError,setShowError]=useState(false);
 
@@ -15,23 +14,26 @@ export default function Name({ value, error }) {
   }, [error]);
 
   useEffect(() => {
-    if (regexName.test(name)) {
+    // اعتبارسنجی مقدار ورودی در هنگام تغییر
+    if (regexName.test(value)) {
       setIsValid(true);
     } else {
       setIsValid(false);
     }
-  }, [name]);
+  }, [value]); // وقتی مقدار ورودی تغییر کند، اعتبارسنجی انجام می‌شود
 
   return (
     <div className="rtl flex flex-col text-right">
-      <label className="font-semibold" htmlFor="input">
+      <label className="font-semibold" htmlFor="name">
         نام:
       </label>
       <input
         value={value}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
+
         className="focus:outline-none px-2 border-2 border-gray-100 shadow-lg m-2"
         type="text"
+        id="name"
         placeholder="نام..."
       />
       {isValid && <p className="text-xs text-green-500">نام معتبر است</p>}

@@ -12,6 +12,7 @@ export default function Reletive({ value, onChange, error }) {
         onChange={(e) => onChange(e.target.value)}
         className="focus:outline-none px-2 border-2 border-gray-100 shadow-lg m-2"
         type="text"
+        id="reletive"
         placeholder="نسبت"
       />
       {error && <p className="text-xs text-red-500">{error}</p>}
