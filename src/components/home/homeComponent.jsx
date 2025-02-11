@@ -4,6 +4,7 @@ import Header from "../header/hader";
 import Form from "../form/form";
 import { DarkModeContext } from "../context/DarkModeContext";
 import Fetch from "../cart/fetch/fetch";
+import Fetch from "../cart/fetch/fetch";
 
 export default function HomeComponent() {
     const { darkMode, setDarkMode } = useContext(DarkModeContext);

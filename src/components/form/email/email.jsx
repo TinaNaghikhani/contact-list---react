@@ -15,10 +15,12 @@ export default function Email({ value, error, onChange }) {
 
   useEffect(() => {
     if (regex.test(value)) {
+    if (regex.test(value)) {
       setIsValid(true);
     } else {
       setIsValid(false);
     }
+  }, [value]);
   }, [value]);
 
   return (
@@ -31,6 +33,7 @@ export default function Email({ value, error, onChange }) {
         onChange={(e) => onChange(e.target.value)}
         className="focus:outline-none px-2 border-2 border-gray-100 shadow-lg m-2"
         type="email"
+        id="email"
         id="email"
         placeholder="ایمیل..."
       />
